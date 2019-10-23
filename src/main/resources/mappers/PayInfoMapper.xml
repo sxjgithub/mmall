@@ -83,10 +83,10 @@
         #{platformStatus,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null" >
-          now(),
+        now(),
       </if>
       <if test="updateTime != null" >
-          now(),
+        now(),
       </if>
     </trim>
   </insert>
