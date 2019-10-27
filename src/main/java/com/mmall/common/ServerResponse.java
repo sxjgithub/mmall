@@ -24,13 +24,13 @@ public class ServerResponse<T> implements Serializable {
         this.data = data;
     }
 
-    private ServerResponse(int status, String msg, T data){
+    private ServerResponse(int status,String msg,T data){
         this.status = status;
         this.msg = msg;
         this.data = data;
     }
 
-    private ServerResponse(int status, String msg){
+    private ServerResponse(int status,String msg){
         this.status = status;
         this.msg = msg;
     }
@@ -64,13 +64,13 @@ public class ServerResponse<T> implements Serializable {
         return new ServerResponse<T>(ResponseCode.SUCCESS.getCode(),data);
     }
 
-    public static <T> ServerResponse<T> createBySuccess(String msg, T data){
+    public static <T> ServerResponse<T> createBySuccess(String msg,T data){
         return new ServerResponse<T>(ResponseCode.SUCCESS.getCode(),msg,data);
     }
 
 
     public static <T> ServerResponse<T> createByError(){
-        return new ServerResponse<T>(ResponseCode.ERROR.getCode(), ResponseCode.ERROR.getDesc());
+        return new ServerResponse<T>(ResponseCode.ERROR.getCode(),ResponseCode.ERROR.getDesc());
     }
 
 
@@ -78,7 +78,7 @@ public class ServerResponse<T> implements Serializable {
         return new ServerResponse<T>(ResponseCode.ERROR.getCode(),errorMessage);
     }
 
-    public static <T> ServerResponse<T> createByErrorCodeMessage(int errorCode, String errorMessage){
+    public static <T> ServerResponse<T> createByErrorCodeMessage(int errorCode,String errorMessage){
         return new ServerResponse<T>(errorCode,errorMessage);
     }
 
